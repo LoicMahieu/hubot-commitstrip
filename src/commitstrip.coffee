@@ -2,21 +2,17 @@
 #   Random CommitStrip
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   COMMITSTRIP_DEFAULT_LANGUAGE
 #
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
-#
-# Notes:
-#   <optional notes required for the script>
+#   hubot commitstip latest
 #
 # Author:
 #   Loïc Mahieu <mahieuloic@gmail.com>
 
-module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "hello!"
+lib = require './commitstrip-lib'
 
-  robot.hear /orly/, ->
-    res.send "yarly"
+module.exports = (robot) ->
+  robot.respond /commitstrip latest/, (res) ->
+    lib.latest().then (imageUrl) ->
+      res.reply imageUrl
