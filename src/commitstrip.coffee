@@ -5,14 +5,17 @@
 #   COMMITSTRIP_DEFAULT_LANGUAGE
 #
 # Commands:
-#   hubot commitstip latest
+#   hubot commitstrip [latest]
 #
 # Author:
 #   Loïc Mahieu <mahieuloic@gmail.com>
 
-lib = require './commitstrip-lib'
+lib = require './lib/commitstrip-lib'
 
 module.exports = (robot) ->
-  robot.respond /commitstrip latest/, (res) ->
-    lib.latest().then (imageUrl) ->
-      res.reply imageUrl
+  robot.respond /commitstrip( latest)?/, (res) ->
+    lib.latest().then (strip) ->
+      res.reply """
+        #{strip.title}
+        #{strip.image}
+      """

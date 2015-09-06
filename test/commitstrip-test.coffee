@@ -14,4 +14,4 @@ describe 'commitstrip', ->
 
   describe 'latest', ->
     it 'registers a response listener', ->
-      expect(@robot.respond).to.have.been.calledWith /commitstrip latest/
+      expect(@robot.respond).to.have.been.calledWith /commitstrip( latest)?/

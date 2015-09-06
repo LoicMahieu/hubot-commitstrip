@@ -14,7 +14,10 @@ latest = (l) ->
     .then (res) -> res.text()
     .then (body) ->
       $ = cheerio.load body
-      $('.post img').attr('src')
+
+      title: $('.post .entry-title').text()
+      url: $('.post .entry-title a').attr('href')
+      image: $('.post img').attr('src')
 
 module.exports =
   latest: latest
