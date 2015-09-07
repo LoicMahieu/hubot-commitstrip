@@ -1,16 +1,16 @@
 {
   "name": "hubot-commitstrip",
-  "description": "Random CommitStrip",
+  "description": "CommitStrip commands for Hubot",
   "version": "0.0.0",
   "author": "Loïc Mahieu <mahieuloic@gmail.com>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-commitstrip.git"
+    "url": "git://github.com/LoicMahieu/hubot-commitstrip.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-commitstrip/issues"
+    "url": "https://github.com/LoicMahieu/hubot-commitstrip/issues"
   },
   "dependencies": {
     "cheerio": "^0.19.0",
