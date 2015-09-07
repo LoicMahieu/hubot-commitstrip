@@ -1,4 +1,6 @@
 
+require('es6-promise').polyfill()
+
 fetch = require 'node-fetch'
 cheerio = require 'cheerio'
 
