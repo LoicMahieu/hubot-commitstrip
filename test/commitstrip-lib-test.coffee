@@ -20,20 +20,29 @@ urlReg = new RegExp [
   '$'
 ].join('')
 
+assertStrip = (strip) ->
+  expect(strip.image).to.match(imgReg)
+  expect(strip.url).to.match(urlReg)
+  expect(strip.title).to.be.ok
+
 describe 'commitstrip-lib', ->
   describe 'latest', ->
     it 'can get latest strip with the default language', ->
-      lib.latest().then (strip) ->
-        expect(strip.image).to.match(imgReg)
-        expect(strip.url).to.match(urlReg)
-        expect(strip.title).to.be.ok
+      lib.latest().then assertStrip
     it 'can get latest strip with the `fr` language', ->
-      lib.latest('fr').then (strip) ->
-        expect(strip.image).to.match(imgReg)
-        expect(strip.url).to.match(urlReg)
-        expect(strip.title).to.be.ok
+      lib.latest('fr').then assertStrip
     it 'can get latest strip with the `en` language', ->
-      lib.latest('en').then (strip) ->
-        expect(strip.image).to.match(imgReg)
-        expect(strip.url).to.match(urlReg)
-        expect(strip.title).to.be.ok
+      lib.latest('en').then assertStrip
+
+  describe 'pageCount', ->
+    it 'can get page count', ->
+      lib.pageCount().then (count) ->
+        expect(count).to.be.a('number')
+
+  describe 'random', ->
+    it 'can get a random strip', ->
+      lib.random().then assertStrip
+
+  describe 'byNumber', ->
+    it 'can get a strip from page number', ->
+      lib.byNumber(1).then assertStrip
