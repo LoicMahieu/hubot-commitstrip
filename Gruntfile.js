@@ -6,6 +6,7 @@ module.exports = function (grunt) {
     mochaTest: {
       test: {
         options: {
+          timeout: 10000, // commitstrip can be slow sometimes...
           reporter: 'spec',
           require: 'coffee-script'
         },
