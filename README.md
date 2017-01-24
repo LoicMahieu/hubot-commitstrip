@@ -1,5 +1,7 @@
 # hubot-commitstrip
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/LoicMahieu/hubot-commitstrip.svg)](https://greenkeeper.io/)
+
 CommitStrip commands for Hubot
 
 See [`src/commitstrip.coffee`](src/commitstrip.coffee) for full documentation.
